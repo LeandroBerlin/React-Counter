@@ -12,14 +12,9 @@ class App extends Component {
     }
   }
 
-  Reset = () => {
-    this.setState(
-      { count: 0 }
-    )
-  }
+  // <button onClick={() => this.updateCounter('INCREMENT')}> + </button>
 
   updateCounter = (type) => {
-
     switch (type) {
       case 'INCREMENT':
         console.log("Going to increment")
@@ -40,12 +35,6 @@ class App extends Component {
     }
   }
 
-  ToggleClick = () => {
-    this.setState(
-      prevState => {
-        return { show: !prevState.show }
-      });
-  }
 
   render() {
     return (
@@ -56,13 +45,10 @@ class App extends Component {
         </header>
         <div className="App-intro">
           <h2>Counter and Toggle - Update</h2>
-          <button onClick={() => this.updateCounter('INCREMENT')}>Click to increment by 1</button>
-          <button onClick={() => this.updateCounter('DECREMENT')}>Click to decrease by 1</button>
-          <button onClick={this.ToggleClick}>
-            {this.state.show ? 'Hide number' : 'Show number'}
-          </button>
-          <button onClick={this.Reset}>Reset</button>
-          {this.state.show ? <h2>{this.state.count}</h2> : ''}
+          <button onClick={() => this.updateCounter('INCREMENT')}>+ </button>
+          <button onClick={() => this.updateCounter('DECREMENT')}> - </button>
+          <div> {this.state.count}</div>
+
         </div>
       </div>
     );
