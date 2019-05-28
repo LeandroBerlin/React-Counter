@@ -20,12 +20,15 @@ class App extends Component {
 
   IncrementItem = () => {
     //WRONG! ANTIPATTERN!
-    //this.setState({count: this.state.count + 1})
+    // this.setState({count: this.state.count + 1})
     //CORRECT prevState func
+
     this.setState(prevState => {
       console.log("This is prev", prevState)
       return { count: prevState.count + 1 }
     })
+
+
   }
 
   DecreaseItem = () => {
