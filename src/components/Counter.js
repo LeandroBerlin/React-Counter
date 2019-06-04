@@ -15,14 +15,15 @@ class Counter extends Component {
         console.log("Want decrease counter")
     }
 
-    reset = () => {
-        this.props.dispatch({ type: "RESET" })
-    }
-
     async = () => {
         console.log("ASYNC")
         this.props.dispatch({ type: "INCREASE_ASYNC" })
     }
+
+    wft = () => {
+        this.props.dispatch({ type: "DECREASE_ASYNC" })
+    }
+
 
     render() {
         return (

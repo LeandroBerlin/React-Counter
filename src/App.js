@@ -22,22 +22,14 @@ import Counter from './components/Counter';
 const sagaMiddleware = createSagaMiddleware()
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
-// TODO -> We need to implement the Middleware here
-
-//const store = createStore(
-//  reducer, 
-// devTools
-//)
 const store = createStore(
   reducer,
   compose(applyMiddleware(sagaMiddleware), devTools)
 );
-//Apply mysaga -> use .run :(
+
 sagaMiddleware.run(rootSaga)
 
-
 class App extends Component {
-
 
   render() {
     return (
